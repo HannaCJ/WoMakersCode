@@ -1,0 +1,47 @@
+class Carro:
+    def __init__(self,cor,modelo):
+        self.ligado = False
+        self.cor = cor
+        self.modelo = modelo
+        self.velocidade = 0 
+
+    def ligar(self):
+        if not self.ligado:
+            self.ligado = True
+            print('Carro ligado!')
+        else:
+            print('Carro já desligado')      
+    def desligar(self):
+        if self.ligado:
+            self.ligado = False
+            self.velocidade = 0
+            print('Carro desligado')
+        else:
+            print(f' Carro já desligado')
+
+    def acelerar(self, incremento):
+        if self.ligado:
+            self.velocidade += incremento
+            print(f"O carro {self.modelo} acelerou para {self.velocidade} km/h.")
+        else:
+            print("O carro está desligado. Ligue o carro antes de acelerar.")
+
+    def desacelerar(self,decremento):
+        if self.ligado:
+            if self.velocidade >=  decremento:
+                self.velocidade -= decremento
+                print(f"O carro desacelerou para {self.velocidade} km/h.")
+            else:
+                self.velocidade = 0
+                print(f"O carro parou completamente.")
+        else:
+            print("O carro está desligado. Ligue o carro antes de desacelerar.")
+
+
+#instanciando o Kardian
+carro1 = Carro(cor ='Azul', modelo='Kardian')
+carro1.ligar()
+carro1.acelerar(30)
+carro1.desacelerar(20)
+carro1.desligar()
+carro1.acelerar(40)
