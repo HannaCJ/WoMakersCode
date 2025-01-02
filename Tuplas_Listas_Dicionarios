@@ -1,0 +1,46 @@
+perguntas = ['Telefonou para a vitima?', 'Esteve no local do crime?', 'Mora perto da vitima?', 'Devia para a vitima?','Já trabalhou com a vitima?']
+respostas = []
+for perguntas in perguntas:
+    resposta = input(perguntas + '(S/N)')
+    respostas.append(resposta.upper())
+contagem_sim = respostas.count('S')
+if contagem_sim == 2:
+    classificacao =  'SUspeita'
+elif 3 <= contagem_sim <= 4:
+    classificacao =  'Cumplice'
+elif contagem_sim ==5 :
+    classificacao =  'Assassina'
+else:
+    classificacao =  'Inocente'
+print(f' A pessoa é classificada como: {classificacao}')
+#############################################
+notas_aluna1 = []
+notas_aluna2 = []
+notas_aluna3 = []
+notas_aluna4 = []
+notas_aluna5 = []
+for i in range(4):
+    nota1 = float(input(f'Digite a nota {i+1} da aluna1:'))
+    notas_aluna1.append(nota1)
+    nota2 = float(input(f'Digite a nota {i+1} da aluna2:'))
+    notas_aluna2.append(nota2)
+    nota3 = float(input(f'Digite a nota {i+1} da aluna3:'))
+    notas_aluna3.append(nota3)
+    nota4 = float(input(f'Digite a nota {i+1} da aluna4:'))
+    notas_aluna4.append(nota4)
+    nota5 = float(input(f'Digite a nota {i+1} da aluna5:'))
+    notas_aluna5.append(nota5)
+
+media1 = sum(notas_aluna1)/4
+media2 = sum(notas_aluna2)/4
+media3 = sum(notas_aluna3)/4
+media4 = sum(notas_aluna4)/4
+media5 = sum(notas_aluna5)/4
+medias = [media1,media2,media3,media4,media5]
+
+aprov = 0
+for media in medias:
+
+    if media >= 7:
+        aprov += 1
+print (f'O numero de alunas com media maior ou igual a sete fora {aprov}')

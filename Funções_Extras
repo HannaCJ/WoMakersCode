@@ -1,0 +1,81 @@
+##############################
+def soma (a,b,c):
+    sum = a+b+c
+    print(f'A soma dos números é: {sum}')
+soma(10,6,54)
+
+##############################
+def reverso(num):
+    reverso_str = str(num)
+    reverso = reverso_str[::-1]
+    reverso_str2 = int(reverso)
+    print(f'O reverso do número {num} é {reverso_str2}')
+reverso(345)
+##############################
+def celsio(temp):
+    graus = temp *1.8 + 32
+    print(f'A temperatura {temp} em Celsius é equivalente a {graus:.2f} Fahrenheit')
+def fah(temp):
+    graus = (temp - 32)/1.8
+    print(f'A temperatura {temp} em Fahrenheit é equivalente a {graus:.2f} Celsius')
+while True:
+    temperatura = int(input('Digite a temperatura a ser convertida: '))
+    CF = input('Se deseja transformar Celsiu para Fahrenheit digite: 1 \nSe deseja transformar Fahrenheit para Celsiu digite: 2\nPara sair digite 3\n')
+    if CF == '1':
+        celsio(temperatura)
+    elif CF == '2':
+        fah(temperatura)
+    elif CF == '3':
+        break
+##############################
+def converter_moeda(quantidade, opcao):
+    taxas_de_cambio = {
+        '1': 4.91,  # Dólar Americano
+        '2': 0.02,  # Peso Argentino
+        '3': 3.18,  # Dólar Australiano
+        '4': 3.64,  # Dólar Canadense
+        '5': 0.42,  # Franco Suíço
+        '6': 5.36,  # Euro
+        '7': 6.21   # Libra Esterlina
+    }
+    
+    if opcao in taxas_de_cambio:
+        return quantidade / taxas_de_cambio[opcao]
+    else:
+        return None
+
+while True:
+    print("Bem vindo à conversão de moedas!")
+    print("Para converter de reais para:")
+    print("1 - Dólar Americano")
+    print("2 - Peso Argentino")
+    print("3 - Dólar Australiano")
+    print("4 - Dólar Canadense")
+    print("5 - Franco Suíço")
+    print("6 - Euro")
+    print("7 - Libra Esterlina")
+    print("Para sair do programa, digite qualquer outra tecla.")
+    
+    opcao = input("Escolha a moeda para a conversão: ")
+    if opcao not in {'1', '2', '3', '4', '5', '6', '7'}:
+        print("Programa encerrado.")
+        break
+    try:
+        quantidade_reais = float(input("Quanto você tem em reais? R$"))
+        valor_convertido = converter_moeda(quantidade_reais, opcao)
+        if valor_convertido is not None:
+            print(f"Você pode comprar {valor_convertido:.2f} da moeda escolhida.")
+        else:
+            print("Opção inválida.")
+    except ValueError:
+        print("Entrada inválida. Por favor, insira um número válido.")
+##############################
+def contar(vogais):
+    vogal ='aeiouAEIOU'
+    soma = sum(1 for p in frase if p in vogal)
+    return soma
+
+frase = input('Digite a frase que deseja contar a quantidade de vogais:')
+soma = contar(frase)
+print(f'O total de vogais da frase "{frase}" é {soma}')
+

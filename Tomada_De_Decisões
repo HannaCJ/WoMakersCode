@@ -1,0 +1,81 @@
+################################################
+num = int(input('Digite o primeiro número: '))
+num2 = int(input('Digite o segundo número: '))
+if num>num2:
+    print(f'O maior número é: {num}')
+elif num2>num:
+    print(f'O maior número é: {num2}')
+
+###############################################
+while True:
+    usuario = input('Olá, digite o turno em q vc estuda:\n M- matutino\n V-Vespertino\n N-Noturno ')
+    if usuario == 'N':
+        print ('Boa noite')
+        break
+    elif usuario == 'M':
+        print ('Bom dia')
+        break
+    elif usuario == 'V':
+        print ('Boa tarde')
+        break
+    else:
+        print('Escolha uma das opções: M, V ou N')
+###############################################
+while True:
+    num = int(input('Escolha um numero entre 0 e 10: '))
+    if num > 10 or num < 0:
+        print ('Número inválido, escolha entre 0 e 10')
+    else:
+        print(f'O número digitado foi: {num}')
+        break
+###############################################
+lado1 = float(input('Digite o 1 lado do triângulo: '))
+lado2 = float(input('Digite o 2 lado do triângulo: '))
+lado3 = float(input('Digite o 3 lado do triângulo: '))
+if lado1 == lado2 == lado3:
+    print ('Esse triângulo é equilátero')
+if lado1 == lado2 != lado3 or lado2==lado3 !=lado1 or lado3==lado1 !=lado2:
+    print ('Esse triângulo é isósceles')
+elif lado1 != lado2 != lado3:
+    print ('Esse triângulo é escaleno')
+###############################################
+while True:
+    user = input('Digite seu login: ')
+    senha = input('Digite sua senha: ')
+    if user == 'admin' and senha == 'admin123' :
+        print('Acesso permitido')
+        break
+    else:
+        print('Erro, login ou senha incorretos, tente novamente')
+###############################################
+soma1 = 0
+soma2 = 0
+while True:
+    num = float(input('Digite os números positivos que deseja somar: . Para sair digite 0'))
+    if num == 0:
+        print (f'Vc digitou um total de {soma1} números pares e {soma2} número impares')
+        break
+    elif num < 0:
+        print ('Apenas valores positivos são aceitos')
+    elif num % 2 == 0:
+        soma1  += 1
+    else:
+        num % 2 != 0
+        soma2  += 1
+###############################################
+salario = float(input('Digite seu salário bruto: '))
+if salario <= 1903.98:
+    print (f'Seu salário líquido é: {salario}. Isento de imposto de renda')
+elif salario >= 1903.98 and salario <= 2826.65:
+    salarioliq = salario - (salario * 0.075)
+    print (f'Seu salário líquido é: {salarioliq}. 7.5% do imposto de renda')
+elif salario >= 2826.66 and salario <= 3751.05:
+    salarioliq = salario - (salario * 0.15)
+    print (f'Seu salário líquido é: {salarioliq}. 15% do imposto de renda')
+elif salario >= 3751.06 and salario <= 4664.68:
+    salarioliq = salario - (salario * 0.225)
+    print (f'Seu salário líquido é: {salarioliq}. 22.5% do imposto de renda')
+else:
+    salario > 4664.68
+    salarioliq = salario - (salario * 0.275)
+    print (f'Seu salário líquido é: {salarioliq}. 27.5% do imposto de renda')
